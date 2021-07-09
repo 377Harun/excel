@@ -1,0 +1,2 @@
+dim a as long 
+integer ın daha geniş hali

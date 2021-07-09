@@ -1,0 +1,282 @@
+eger textbox a deger girilmemesini istiyorsan textboxın özellikler kısmında 
+locked ı true yap.
+
+özelliklerden keydown demek eger form acıkken şu tusa basıldıysa tusların kodları var
+mesela enter kodu 13
+if KeyCode=13 then
+
+Private Sub text_barkod_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
+msgbox KeyCode
+bastıgın tusun hangi kod oldugunu verir.
+yani text barkod uzerindeyken enter a basarsan urunbul sub ını çalıştırır.
+
+If KeyCode = 13 Then
+URUN_BUL
+End If
+End Sub
+
+
+layut demek userfrm yuklendiğinde demek
+Private Sub UserForm_Layout()
+Dim i As Long
+For i = 2 To 1000
+If Sheets("SEPET").Range("a" & i) = "" Then
+Exit For
+End If
+Next
+list_sepet.ColumnCount = 6
+list_sepet.RowSource = "SEPET!A2:F" & i
+End Sub
+
+
+exit sub formun hepsinden çıkar taki başka bir işlem yapmasını soyleyene kadar.
+exit for ise sub da degil for dongusunden cıkıp diger sub ları calıstırır.
+
+textbox'ın locked'ını true yaparsan o textbox'a yazı yazılmaz.
+
+textbox propertise de tabindex 0 dersen açılır açılmaz imleci oraya getirir.
+
+
+sayfa1.cells(1,1)=Date sadece tarihi yazar.
+sayfa1.cells(1,1)=Time sadece saati yazar.
+
+
+MsgBox "Tahsilat yapıldı." + vbNewLine + "Hoşçakalın !", vbInformation
+eger alta mesaj bırakacaksan +vbnewline kullan  birşeye eşitlemediğimiz için () 
+kullanmadık.
+
+frm_satis.FORMU_TEMIZLE
+frm.nakit içerisindeki butona tıklandıgında frm_satis formundaki formu temizle
+sub'ını çalıştır dedim.
+
+propertise de border style labelların kenar çizgilerinin görünmez olmasını sağlar.
+
+Activate
+Bu olay, kullanıcı formu etkin pencere olduğunda her zaman tetiklenir.
+
+list_sepet.ListIndex = list_sepet.ListCount - 1
+listbox'ta son değeri indeksler son degerii gosterir.
+
+intialize form açıldıgında layout ise form yuklendiğinde üzerinde değişiklik yapıl-
+dığında demek.
+
+
+msgbox da eger alt satıra mesaj bırakacaksan +vbNewline yaz eger bilgi vereceksen
+ ','  kullan
+
+
+eger koda alt satırda degilde aynı satırda devam edeceksen : kullan alt satıra gec kodu demek.
+a = 20: b = 30: c = a + b: MsgBox c, vbInformation, vbOK
+
+userform olaylarında mousemove fare imleci formun üzerine geldiğinde.
+
+userform olaylarında QueryClose userform kapatılmadan önce yapılacaklar içi kullanılır.
+Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
+MsgBox "QueryClose userform kapatılmadan önce" + vbNewLine + "yapılacaklar için kullanılır", vbInformation
+End Sub
+
+
+label ya da textbot ya da image'nin propertise'den SpecialEffwct'ini 0 yaparsan nesnenin 
+çerçevesi görünmez.
+
+
+userform foto yuklerken
+ör foto ismi harun loadpicture("") baglantı yolunu kopyala foto sonuna .jpg ekle
+
+
+sub'ın sonuna DoEvents eklemek sub'ı durdurur.
+sonsuz döngüleri durdurur.
+
+sayfa1.select sayfa1'i aktif eder.
+
+sheet(1) demek 1. sayfa demek  
+sheet(1).cells(1,1) olabilir.
+
+
+match kaçıncı makrosudur. bir ismin o aralıktakaçıncı sırada oldugunu verir.
+
+excelde baska çalışma kitabına yazı yazma
+ama once dosyayı açman lazım !!!
+Workbooks.Open Filename:="C:\Users\hatun\Desktop\excel\excel makrolar\set fonk.xlsm"
+Workbooks("set fonk.xlsm").Sheets("sayfa1").Cells(1, 2) = "harun"
+
+kişi kayıtlı değilse:Sub cagırr()
+a = Sayfa2.Cells(1000, 1).End(xlUp).Row
+
+    For i = 2 To a
+        If Sayfa2.Cells(i, 1).Text = TextBox1 Then
+        GoTo son
+        End If
+    Next i
+    
+MsgBox "Bu kişi kayıtlı değil.", vbCritical
+ 
+son:
+        label_ad_soyad.Caption = Sayfa2.Cells(i, 2)
+        label_ana_adı.Caption = Sayfa2.Cells(i, 4)
+        label_baba_adı.Caption = Sayfa2.Cells(i, 3)
+        label_tc.Caption = Sayfa2.Cells(i, 1)
+End Sub
+
+textboxlarda labellarda propertise penceresinde specialeffect 
+dış çerçeveyi tasarlar.
+
+ucase buyuk harf yazar
+
+ID atarken son satır makrosunu kullan.
+
+excel dosyasını gizleme sadece userform kalsın:
+istediğin bir butona atayabilirsin.
+Private Sub cmd_excel_Click()
+
+Workbooks.Application.Visible = False
+
+End Sub
+
+listboxa liste atarken rowsource işlevini kullan.
+önce listbox ın column head'ını true yap
+kaynak gosterirken balıgı alma
+ListBox1.ColumnCount = 3
+a = Sayfa1.Cells(1000, 1).End(xlUp).Row
+ListBox1.RowSource = "sayfa1!a2:c" & a
+
+userform intialize userform açılmadan hemen önce
+userform layout yuklendikten hemen sonra
+userform activate demek userform hide edilse bile tekrar açılıyorsa bu işlemleri
+bir daha yap eger sadece intialize ye ya da yuklendikten sonra deseydim bu işlemleri
+yapmazdı ama tekrar aktif edildiğinde yap dediğim için tekrar kodu çalıştırdı.
+textbox beforeupdate acmadan once guncelle userform olmaz
+
+hata varsa suraya git 
+'on error goto hata
+On Error GoTo hata
+text_maas.Value = Format((text_calıstıgı_gun.Value * text_gunluk_ucret.Value), "#,##0.00")
+Exit Sub
+hata:
+text_maas.Value = 0
+
+vba ile yeni satır ekleme
+Sayfa1.Rows(2).Insert
+sayfa1.cells(2,1)=a diye kodlarsak 2.satıra yeni bir satır ekler ve değeri en üstte gosterir.
+
+sayfa1.cells(7000,1).end(xlup).row son dolu satırı gosterir ondan once bos satır varsa onu da sayar.
+
+eger bir olayı olmadıgında bir daha yaptırmak istiyorsan 
+bas: 
+a=inputbox("sayı giriniz:")
+if a<>10 then
+goto bas 
+endif
+
+free ico sitesinden icon indir
+
+USERFORM DA TEXTBOX'IN PROPERTİSE KISMINDA MAX LENGTH 10 larak ayarlarsan en fazla 10
+karakter girii yapabilirsin.
+
+userfrmda textbx'ın prpertise kısmında password chard * olarak işaretlersen
+textbox'a yazı yazıldığında **** olarak görünür.
+
+userformda textbox'ın propertise kısmında multiline true yaparsan altalta birsürü
+metin girebilirsin.
+
+userformda textbox'ın propertise kısmında scroollbar'ı 3 pozisyonuna getirirsen
+scroll bar oluşturur.
+
+userformu propertise kısmından startposition'ı manual olarak seç
+sonra userform intialize oldugunda
+userform.left=user_kullanıcı.left   diger formun tam solunda
+userform.top=user_kullanıcı.top+10  diğer formun 10 birim asagısında
+
+combobox propertise style 2 yani dropdownlist yap bu sayede combobx yerine
+yazı yazdığında algılamaz.
+
+enable false yap yeni kayıt butonuna basıldığında frame i aktifleştir.
+normalde butonumun adı cmd_iptal fakat ben bunu başka bir formda tıklatmak
+istersem cmd_iptal_Click olarak çağırmam lazım.
+
+formun içerisine yazdığım sub'ı başka bir formda çağırmak
+Call frm_stok_listeler.StoklarıListele
+
+çok sütunlu listbox'ta sütun indexleri 0'dan başlar
+eğer textbox'a veya combobox'a veri göndermek istersen listboxtaki kolon indexleriyle gönder
+list_stok listbox'ın genel adıdır.
+user_stok_tanımlama.text_stok_kodu.Value = list_stok.List(list_stok.ListIndex, 0)
+user_stok_tanımlama.text_acıklama.Value = list_stok.List(list_stok.ListIndex, 1)
+user_stok_tanımlama.combo_birim.Value = list_stok.List(list_stok.ListIndex, 2)
+user_stok_tanımlama.text_alis_fiyati.Value = list_stok.List(list_stok.ListIndex, 3)
+user_stok_tanımlama.text_satis_fiyati.Value = list_stok.List(list_stok.ListIndex, 4)
+
+userformdaki kırmızı çarpı işaretini pasif etmek
+Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
+If CloseMode = vbFormControlMenu Then
+Cancel = True
+End If
+End Sub
+
+bekleme makrosu
+Application.Wait Now() + TimeSerial(0, 0, a)
+
+
+
+userform1 arkadaki büyük form userform2 öndeki kücük form 
+userform1 propertise den startposition özelliğini center yap
+userform2 propertiseden start position özelliğini manuel yap
+
+Private Sub UserForm_Click()
+UserForm2.Left = UserForm1.Left
+UserForm2.Top = UserForm1.Top + 30
+UserForm2.Show
+End Sub
+
+
+eger bir userformdan ya da modulden veri almak istersen diğer userformda bir label oluştur
+userform_yeni.label.caption=isim gibi değişken ata
+
+
+userformu nerde başlatmak istiyorsun propertise left=20 dersen ekranın 20 birim solunda başlatır
+propertise top = 50 dersen 50 birim aşağıda başlatır
+userform2.left=userform1.left dersen userform2'yi userform1'in tam solunda yani üstünde başlatır.
+
+userformda butonlarda butonun üzerine gelindiğinde yaz yazılması isteniyorsa 
+propertise control tip text e yazı yaz
+
+textbox basamak kısıtı propertise max length 10 dersen en fazla 10 karakter alır.
+
+
+frame enabled false yap yeni kayıt butonuna tıklandığında frame1.enabled true yap
+
+textbox ta textbox ın maxlength ini 10 yaptın propertise den autotab =true yaparsan
+10 karakter girdikten sonra diger textbox a gecer.
+
+
+gun ay yıl bulmak------------------------------------------------------------------------------
+
+gun = Left(frm_yatan_hasta.ListBox1.List(ListBox1.ListIndex, 1), 2)
+aybul = Left(frm_yatan_hasta.ListBox1.List(ListBox1.ListIndex, 1), 5)
+yıl = Right(frm_yatan_hasta.ListBox1.List(ListBox1.ListIndex, 1), 4)
+ay = Right(aybul, 2)
+
+
+
+seçilen satırın silinmesi ------------------------------------------------------------------
+For i = 2 To son
+    If Sayfa1.Cells(i, 1) = text_protokol_no.Value Then
+    Rows("i:i").Select
+    Selection.Delete Shift:=xlUp
+    End If
+Next i
+
+
+msgbox err.description --------------------------------------------------------------------------
+Option Explicit
+Sub sagdan_kırp()
+On Error GoTo mesaj
+Dim a As String
+a = InputBox("Lütfen sağdan boşluklu bir metin giriniz :")
+MsgBox "Nesnenin kırpılmamış uzunuğu " & Len(a), vbCritical + vbOKCancel
+MsgBox "Nesnenin sağdan kırpılmış uzunluğu " & Len(RTrim(a)), vbCritical + vbOKCancel
+Exit Sub
+
+mesaj:
+MsgBox Err.Description
+End Sub
